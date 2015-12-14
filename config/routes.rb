@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
+  
+
+  get 'twist/index' => 'twist#index'
+
+  get 'session/new'
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
+
   get 'pages/index'
 
   root :to => 'pages#index'
   get '/index' => 'pages#index'
 
-  resources :users
+  resources :users, :twists
+
+
 
  
   # The priority is based upon order of creation: first created -> highest priority.
