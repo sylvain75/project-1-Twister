@@ -1,2 +1,26 @@
 <h1>All Twists</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Twists</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @twists.each do |twist| %>
+      <tr>
+        <td><%= twist.user[:id] %></td>
+        <td><%= twist.content %></td>
+        <td><%= link_to 'Show', ('/twist/show') %></td>
+        <td><%= link_to 'Edit', ('/twist/edit') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Twist', ('/twist/new') %>
+

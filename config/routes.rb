@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   
 
-  get 'twist/index' => 'twist#index'
+  get '/twists' => 'twist#index'
+  get '/twist/new' => 'twist#new'
+  post '/twists' => 'twist#create'
+  # get '/twist/edit' => 'twist#edit'
+  
 
   get 'session/new'
   get '/login' => 'session#new'
