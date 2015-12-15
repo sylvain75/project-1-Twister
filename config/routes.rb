@@ -1,4 +1,27 @@
 Rails.application.routes.draw do
+  
+
+  get '/twists' => 'twist#index'
+  get '/twist/new' => 'twist#new'
+  post '/twists' => 'twist#create'
+  # get '/twist/edit' => 'twist#edit'
+  
+
+  get 'session/new'
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
+
+  get 'pages/index'
+
+  root :to => 'pages#index'
+  get '/index' => 'pages#index'
+
+  resources :users, :twists
+
+
+
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
