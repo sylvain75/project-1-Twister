@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = @current_user
   end
 
   # POST /users
@@ -63,6 +65,38 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # Follows a user.
+  def follow
+    followed_user = User.find params[:id]
+    unless @current_user.following.include? followed_user
+      @current_user.active_relationships.create(followed_id: params[:id])
+    end
+    redirect_to followed_user
+  end
+
+  # Unfollows a user.
+  def unfollow
+    followed_user = User.find params[:id]
+    @current_user.active_relationships.find_by(followed_id: params[:id]).destroy
+    redirect_to followed_user
+  end
+
+  # Shows the users a user is following
+  def following
+    @user = User.find params[:id]
+  end
+
+  # Shows the users who follow a user
+  def followers
+    @user = User.find params[:id]
+  end
+
+  # Returns true if the current user is following the other user.
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

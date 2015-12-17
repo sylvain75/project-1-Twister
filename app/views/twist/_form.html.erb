@@ -8,10 +8,12 @@
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div> -->
 
-<%= form_tag '/twists' do %>
+<%= form_for @twist do |f| %>
   <div class="form-group">
-    <textarea class="form-control" rows="3" name="content"></textarea>
-    <input type="submit" value="Create Twist" class="btn btn-primary"></input>
+    <!--textarea class="form-control" rows="3" name="content"></textarea-->
+    <%= f.text_area :content, :rows => 3, :class => 'form-control' %>
+    <!--input type="submit" value="Create Twist" class="btn btn-primary"></input-->
+    <%= f.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>
 

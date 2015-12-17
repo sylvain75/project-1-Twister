@@ -1,0 +1,12 @@
+<% @user.followers.each do |following| %>
+  <%= link_to(following.name.capitalize, following) %>
+  <%# raise "hell" %>
+  
+  <ul>
+    <% following.twists[0..3].each do |twist| %>
+      <li><%= twist.content %></li>
+    <% end %>
+  </ul>
+
+  <%#= link_to(following.twists.first.content, following) %>
+<% end %>

@@ -1,0 +1,17 @@
+<h1><%= @twist.user.name %></h1>
+<p><%= @twist.content %></p>
+<%= form_for [@twist, Comment.new] do |f| %>
+    <%=  f.text_area :comment %> 
+    <br>
+    <%=  f.submit :class => 'btn btn-primary' %>
+<% end %>
+  <% @twist.comments.each do |comment| %>
+  <p><%= comment.comment %></p>
+  <p>&mdash; <%= link_to(comment.user.name, comment.user) %>, 
+    <%= time_ago_in_words( comment.created_at ) %> ago.
+    <%#= comment.created_at.strftime('%d-%m-%Y %H:%M:') %>
+  </p>
+  <% end %>
+  
+
+<%= link_to 'Back', twists_path %>

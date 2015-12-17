@@ -1,28 +1,30 @@
-== README
+# Project 1: Twitter like
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features:
 
-Things you may want to cover:
+- Bootstrap gem to improve the layout:
+  - Navbar
+  - Tables
+  - Footer
+- Sign up/in set up with the session controller
+- Tweets (twists) system to post in a dedicated page
+- Dated comments possible on any twists
+- Links to the other profiles
 
-* Ruby version
+## Where I struggled:
 
-* System dependencies
+All went smoothly until I start to install the tweet system. I tried to build my app by myself which was a good point to understand better the basic and I could not come back on the tutorial advised because too many difference to link them together. 
+The comment controller/routes have also been a real difficulty to manage and hopefully Joel and Jack were there. I will have to review that.
 
-* Configuration
+## Sources:
+ 
+http://edgeguides.rubyonrails.org/
+https://www.youtube.com/watch?v=Zo2vav3dYnY "Scaffolding and twitter bootstrap"
 
-* Database creation
+## What could be improved:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Image/video uploader system could be installed
+- the design
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+

@@ -48,7 +48,7 @@
         <a class="navbar-brand" href="/">TwisterApp</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to('About Us', "#") %></li>
+            <li><%= link_to('About Us', "/about") %></li>
             <li><%= link_to "All Users", "/users"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
           </ul>
@@ -58,18 +58,16 @@
               <li><%= link_to('Sign Up', new_user_path) %></li>
               <li><%= link_to'Sign In', "/login" %></li>
             <% else %>
-              <li><%= link_to "#{@current_user.name}", @current_user %></li>
-              <li><%= link_to("Logout #{ @current_user.name}", login_path, :method => :delete) %></li>
+              <li><%= link_to "All twists", "/twists" %></li>
+              <li><%= link_to "#{@current_user.name.capitalize}", @current_user %></li>
+              <li><%= link_to("Logout #{ @current_user.name.capitalize}", login_path, :method => :delete) %></li>
             <% end %>
-            
-            <!-- Otherwise, show this link... -->
-
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="container xxx-text-center">
+    <div class="container ">
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
@@ -78,10 +76,12 @@
         
       </div><!--/row-->
 
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
 
+      <div class="navbar navbar-fixed-bottom">
+        <footer>
+          <p>&copy; Company 2015</p>
+        </footer>
+      </div>
     </div> <!-- /container -->
 
   </body>

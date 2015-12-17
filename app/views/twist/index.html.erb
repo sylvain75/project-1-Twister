@@ -1,6 +1,7 @@
 <h1>All Twists</h1>
 
-<table>
+<div class="table-responsive">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Twists</th>
@@ -11,11 +12,12 @@
   <tbody>
     <% @twists.each do |twist| %>
       <tr>
-        <td><%= twist.user[:id] %></td>
+        <td><%= link_to twist.user.name.capitalize, user_path(twist.user) %></td>
         <td><%= twist.content %></td>
-        <td><%= link_to 'Show', ('/twist/show') %></td>
-        <td><%= link_to 'Edit', ('/twist/edit') %></td>
-      </tr>
+        <td><%= twist.comments.count %></td>
+        <td><%= link_to 'Show', show_twist_path(twist.id) %></td>
+        <td><%= link_to 'Edit', edit_twist_path(twist.id) if twist.user == @current_user %></td>
+     </tr>
     <% end %>
   </tbody>
 </table>
@@ -23,4 +25,4 @@
 <br>
 
 <%= link_to 'New Twist', ('/twist/new') %>
-
+</div>

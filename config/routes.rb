@@ -3,21 +3,38 @@ Rails.application.routes.draw do
 
   get '/twists' => 'twist#index'
   get '/twist/new' => 'twist#new'
+  get '/twist/:id/show' => 'twist#show', :as => :show_twist
   post '/twists' => 'twist#create'
-  # get '/twist/edit' => 'twist#edit'
+  get '/twist/:id/edit' => 'twist#edit', :as => :edit_twist
+  patch '/twists/:id' => 'twist#update'
   
-
   get 'session/new'
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
   get 'pages/index'
+  get '/about' => 'pages#about'
 
   root :to => 'pages#index'
   get '/index' => 'pages#index'
 
-  resources :users, :twists
+  resources :users do
+    member do
+      get :follow, :followers, :following
+      delete :unfollow, :as => 'unfollow'
+    end
+  end
+  resources :twists do
+    resources :comments
+
+  end
+end
+
+
+
+
+
 
 
 
@@ -76,4 +93,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
