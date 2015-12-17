@@ -16,14 +16,13 @@ body.pages-about {
 }
 
 body.users-show {
-  background-image: url(<%= asset_path "old_notes.jpeg" %>);
-  background-color: green;
-  background-blend-mode: screen;
+  background-image: url(<%= asset_path "concrete_seamless.png" %>);
+  /*background-size: cover;*/
 }
 
-/*body.twist-index {
-  background-image: url(<%= asset_path "coffee.jpeg" %>);
-}*/
+body.twist-index {
+  background-image: url(<%= asset_path "concrete_seamless.png" %>);
+}
 
 .new_user {
   margin-top: 28px;
@@ -35,6 +34,33 @@ footer {
 
 .table-bordered {
   margin: 0px auto;
+}
+
+
+.table-striped > tbody > tr:nth-child(odd) {
+  background-color: rgba( 0, 0, 0, 0.1 );
+}
+
+.table-striped > tbody > tr:nth-child(even) {
+  background-color: rgba( 0, 0, 0, 0.2 );
+}
+
+.new_twist {
+  color: pink;
+  font-size: 1.3em;
+}
+
+.session-new {
+  background-image: url(<%= asset_path "concrete_seamless.png" %>);
+}
+
+.session-new form{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.block_table {
+  margin-top: 100px;
 }
 
 
