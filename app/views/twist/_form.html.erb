@@ -9,11 +9,11 @@
   </div> -->
 
 <%= form_for @twist do |f| %>
-  <div class="form-group">
+  <div class="form-group new_twist">
     <!--textarea class="form-control" rows="3" name="content"></textarea-->
     <%= f.text_area :content, :rows => 3, :class => 'form-control' %>
     <!--input type="submit" value="Create Twist" class="btn btn-primary"></input-->
-    <%= f.submit :class => 'btn btn-primary' %>
+    <%= f.submit :class => 'btn btn-primary but_new_twist' %>
   </div>
 <% end %>
 
