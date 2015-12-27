@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       delete :unfollow, :as => 'unfollow'
     end
   end
+  
   resources :twists do
     resources :comments
 

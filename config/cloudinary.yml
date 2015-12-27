@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dv3hzpew5
+  api_key: '791188348843553'
+  api_secret: BTUPrOSLdsjmFAfx9k-uH79PpL0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dv3hzpew5
+  api_key: '791188348843553'
+  api_secret: BTUPrOSLdsjmFAfx9k-uH79PpL0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dv3hzpew5
+  api_key: '791188348843553'
+  api_secret: BTUPrOSLdsjmFAfx9k-uH79PpL0
+  enhance_image_tag: true
+  static_image_support: false

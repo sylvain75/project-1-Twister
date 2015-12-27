@@ -30,6 +30,10 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    req = Cloudinary::Uploader.upload params[:image]
+    
+    user = User.create :name=> params[:name], :image => req["url"]
+    redirect_to root_path
 
     respond_to do |format|
       if @user.save
