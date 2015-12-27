@@ -26,5 +26,14 @@ https://www.youtube.com/watch?v=Zo2vav3dYnY "Scaffolding and twitter bootstrap"
 - Image/video uploader system could be installed
 - the design
 
+### Cloudinary
+
+I tried to follow jake tutorial https://ga-wolf.gitbooks.io/wdi-12/content/modules/cloudinary.html and also the cloudinary_test app we created however I am struglling to finalise it. 
+- In my _form.html.erb, I am not sure if I have to set up a `multipart = true`
+- In the users_controller.rb I am not sur of `req = Cloudinary::Uploader.upload params[:image]`
+- Finally When I'm trying to check if my form is working, there is only an input for image yet nothing to upload the image. I am not sure to remember but I think it was more like a upload button.
+
+Thanks for your help, I hope you have good holidays.
+
 
 
