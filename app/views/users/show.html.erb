@@ -2,10 +2,10 @@
     
   </div> 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12"><img src="" alt="">
       <table class="table table-bordered ">
         <tr class="active">
-          <td><%= @user.image %></td>
+          <td><%= image_tag @user.image, :class => 'img-thumbnail' %></td>
           <td><strong>Name:</strong> <%= @user.name.capitalize %></td>
           <td><strong>Email:</strong> <%= @user.email %></td>
         </tr>

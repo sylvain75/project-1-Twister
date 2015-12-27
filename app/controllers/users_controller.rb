@@ -29,12 +29,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
-    req = Cloudinary::Uploader.upload params[:image]
-    
-    user = User.create :name=> params[:name], :image => req["url"]
-    redirect_to root_path
-
+      @user = User.new(user_params)
+      req = Cloudinary::Uploader.upload params[:file]         
+     
+      @user.image = req["url"]
+      
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id 
@@ -45,6 +44,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    # redirect_to root_path
   end
 
   # PATCH/PUT /users/1
