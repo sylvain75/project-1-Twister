@@ -2,7 +2,7 @@
   %h2= flash[:error]
 
 
-= form_tag '/login',:class => 'form-inline' do
+= form_tag '/login',:class => 'form-inline inForm' do
   %div.form-group
   = label_tag :email
   = text_field_tag :email, nil, :autofocus => true, :required => true, :class => 'form-control'

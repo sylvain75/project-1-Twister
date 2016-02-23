@@ -3,11 +3,11 @@
   </div> 
   <div class="row">
     <div class="col-md-12"><img src="" alt="">
-      <table class="table table-bordered ">
-        <tr class="active">
+      <table class="table">
+        <tr>
           <td><%= image_tag @user.image, :class => 'img-thumbnail' %></td>
-          <td><strong>Name:</strong> <%= @user.name.capitalize %></td>
-          <td><strong>Email:</strong> <%= @user.email %></td>
+          <td><p><strong>Name:</strong> <%= @user.name.capitalize %></p>
+          <p><strong>Email:</strong> <%= @user.email %></p></td>
         </tr>
         <tr>
           <% if @user == @current_user %>
@@ -61,8 +61,8 @@
   <%= link_to 'Follow User', follow_user_path(@user) unless @user == @current_user %>
 <% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-info' %> |
+<%= link_to 'Back', users_path, :class => 'btn btn-default' %>
 
 </div>
 

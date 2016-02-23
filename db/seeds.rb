@@ -11,18 +11,18 @@ User.create!([
 ])
 
 Twist.create!([
-  {content: "Salut", user_id: User.first.id},
-  {content: "Salut", user_id: User.first.id},
-  {content: "alknalkna", user_id: User.first.id},
-  {content: "hola", user_id: User.first.id},
-  {content: "its Peter Pearson", user_id: User.last.id},
-  {content: "test twist_params and they work!", user_id: User.last.id}
+  {content: "Bonjour, Do you like cheese?", user_id: User.first.id},
+  {content: "How is it possible to not like cheese?", user_id: User.first.id},
+  {content: "Cheese forever", user_id: User.first.id},
+  {content: "Bread also", user_id: User.first.id},
+  {content: "What's going on with the cheese and bread?", user_id: User.last.id},
+  {content: "I think so I cheese;)", user_id: User.last.id}
 ])
 
 Comment.create!([
-  {comment: "hey bb", twist_id: Twist.first.id, user_id: User.last.id},
-  {comment: "salut", twist_id: Twist.last.id, user_id: User.last.id},
-  {comment: "salut", twist_id: Twist.first.id, user_id: User.last.id}
+  {comment: "Cheese or not cheese?", twist_id: Twist.first.id, user_id: User.last.id},
+  {comment: "Do you believe in the cheese evolution theory?", twist_id: Twist.last.id, user_id: User.last.id},
+  {comment: "E=bread*cheese**2", twist_id: Twist.first.id, user_id: User.last.id}
 ])
 
 Relationship.create!([
